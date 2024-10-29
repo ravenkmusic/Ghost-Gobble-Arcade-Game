@@ -58,4 +58,11 @@ def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
     :return: bool - has the player won the game?
     """
 
-    pass
+    if has_eaten_all_dots and not power_pellet_active and touching_ghost:
+        return False
+    if not has_eaten_all_dots and power_pellet_active and touching_ghost:
+        return False
+    if has_eaten_all_dots and not power_pellet_active and not touching_ghost:
+        return True
+    if has_eaten_all_dots and power_pellet_active and touching_ghost:
+        return True
